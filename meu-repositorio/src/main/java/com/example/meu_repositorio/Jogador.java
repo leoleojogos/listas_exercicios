@@ -2,7 +2,6 @@ package com.example.meu_repositorio;
 
 import jakarta.persistence.*;
 
-
 @Entity
 @Table(name = "jogadores")
 public class Jogador {

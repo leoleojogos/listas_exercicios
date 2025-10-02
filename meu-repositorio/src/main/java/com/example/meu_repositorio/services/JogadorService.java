@@ -5,6 +5,7 @@ import com.example.meu_repositorio.repositories.JogadorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class JogadorService {
@@ -25,5 +26,17 @@ public Jogador saveJogador(String nome, String sobrenome){
 
 public List<Jogador> getAllJogadores(){
     return jogadorRepository.findAll();
+}
+
+public void deleteJogador(Long id) {
+    jogadorRepository.deleteById(id);
+}
+
+public List<Jogador> searchByNome(String nome) {
+    return jogadorRepository.findByNomeContainingIgnoreCase(nome);
+}
+
+public Optional<Jogador> getJogadorById(Long id) {
+    return jogadorRepository.findById(id);
 }
 }
